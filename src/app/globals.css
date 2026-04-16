@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+}
+
+@theme {
+  --font-sans: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), serif;
+  
+  --color-primary: oklch(0.532 0.157 131.589);
+  --color-orange-500: oklch(0.705 0.213 47.59);
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth h-full flex flex-col;
+  }
+  body {
+    @apply bg-black text-white font-sans antialiased min-h-full flex flex-col;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-amber-400 to-orange-500;
+  }
+}
